@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jw-library-read-api-config
+  namespace: default
+  labels:
+    app: jw-library-read-api
+data:
+  DATABASE_URL: sqlite:///./data/read_status.db

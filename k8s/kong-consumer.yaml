@@ -1,0 +1,12 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongConsumer
+metadata:
+  name: jw-library-read-api-consumer
+  namespace: default
+  labels:
+    app: jw-library-read-api
+  annotations:
+    kubernetes.io/ingress.class: "kong"
+username: jw-library-read-api-consumer
+credentials:
+  - jw-library-read-api-key-auth-cred

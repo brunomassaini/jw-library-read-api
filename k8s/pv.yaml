@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jw-library-read-api-pv
+  labels:
+    app: jw-library-read-api
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: hostpath
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: /Users/temporaryadmin/JwLibraryReadApi
+    type: DirectoryOrCreate

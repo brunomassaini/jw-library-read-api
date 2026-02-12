@@ -1,0 +1,16 @@
+services:
+  api:
+    container_name: jw-library-read-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./data/read_status.db
+    volumes:
+      - read-status-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  read-status-data:

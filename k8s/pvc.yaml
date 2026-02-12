@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jw-library-read-api-data
+  namespace: default
+  labels:
+    app: jw-library-read-api
+spec:
+  storageClassName: hostpath
+  volumeName: jw-library-read-api-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

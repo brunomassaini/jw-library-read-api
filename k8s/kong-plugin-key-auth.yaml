@@ -1,0 +1,15 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: jw-library-read-api-key-auth
+  namespace: default
+  labels:
+    app: jw-library-read-api
+plugin: key-auth
+config:
+  key_names:
+    - apikey
+  key_in_header: true
+  key_in_query: false
+  key_in_body: false
+  hide_credentials: true

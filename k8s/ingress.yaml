@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jw-library-read-api
+  namespace: default
+  labels:
+    app: jw-library-read-api
+  annotations:
+    konghq.com/strip-path: "true"
+    kubernetes.io/ingress.class: "kong"
+spec:
+  ingressClassName: kong
+  rules:
+    - host: api.massaini.xyz
+      http:
+        paths:
+          - path: /jw-library-read-api
+            pathType: Prefix
+            backend:
+              service:
+                name: jw-library-read-api
+                port:
+                  number: 8000
